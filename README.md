@@ -1,68 +1,98 @@
 # SwaraNet: Indian Classical Music Emotion and Instrument Classification
 
-This repository contains the implementation of SwaraNet, a dual-task deep learning framework for simultaneous emotion recognition and instrument classification in Indian classical instrumental music.
+This repository contains the implementation of **SwaraNet**, a dual-task deep learning framework for simultaneous emotion recognition and instrument classification in Indian classical instrumental music.
 
-## Instruments
+## Overview
 
-- Flute
-- Tabla
-- Veena
-- Violin
+SwaraNet combines AudioNet-based feature extraction with Bi-GRU temporal modeling and attention mechanisms to jointly classify:
 
-## Emotion Classes
+### Instrument Classes
 
-- Calm
-- Happy
-- Relax
-- Sad
+* Flute
+* Tabla
+* Veena
+* Violin
+
+### Emotion Classes
+
+* Calm
+* Happy
+* Relax
+* Sad
+
+## Repository Structure
+
+```text
+.
+├── baselines/
+├── configs/
+├── data/
+├── notebooks/
+├── results/
+├── src/
+├── README.md
+├── LICENSE
+└── .gitignore
+```
 
 ## Dataset
 
-Indian Classical Instrument Music Emotion Dataset
+The experiments were conducted using the **Indian Classical Instrument Music Emotion Dataset**.
 
-Dataset Structure:
+The dataset contains audio clips from four Indian classical instruments and four emotion categories.
 
-Flute/
- ├── Calm
- ├── Happy
- ├── Relax
- └── Sad
+## Experimental Configuration
 
-Tabla/
- ├── Calm
- ├── Happy
- ├── Relax
- └── Sad
+* Framework: TensorFlow / Keras
+* Input Representation: Mel-Spectrograms
+* Random Seed: 42
+* Optimizer: Adam
+* Batch Size: 32
+* Epochs: 20
 
-Veena/
- ├── Calm
- ├── Happy
- ├── Relax
- └── Sad
+Complete hyperparameter settings are provided in:
 
-Violin/
- ├── Calm
- ├── Happy
- ├── Relax
- └── Sad
+```text
+configs/hyperparameters.yaml
+```
 
-## Experimental Split
+## Reproducibility Resources
 
-- Training: 539 clips
-- Validation: 77 clips
-- Test: 154 clips
+The repository contains:
 
-## Repository Contents
+* Kaggle notebook implementation
+* Hyperparameter configuration
+* Annotation protocol
+* Dataset metadata structure
+* Baseline model descriptions
+* Experimental result documentation
 
-- Dataset metadata
-- Train/Validation/Test splits
-- Preprocessing scripts
-- Feature extraction scripts
-- SwaraNet implementation
-- Baseline models
-- Hyperparameter settings
-- Reproducibility files
+Notebook:
+
+```text
+notebooks/swarna-lakshmi-paper2.ipynb
+```
+
+Annotation protocol:
+
+```text
+data/annotation_protocol.md
+```
+
+## Results
+
+The results directory contains information related to:
+
+* Emotion classification
+* Instrument classification
+* Confusion matrices
+* ROC curves
+* Training and validation performance
 
 ## Citation
 
-Please cite the associated journal paper when using this repository.
+If you use this work, please cite the corresponding SwaraNet publication.
+
+## Contact
+
+For questions regarding the implementation or dataset preparation, please contact the authors.
